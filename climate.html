@@ -28,20 +28,6 @@
     <i class="fa fa-bars" onclick="showMenu()"></i>
     </nav>
     <h1>Know your place</h1>
-  </section>
-
-  <!-- <section class="box">
-    <div class="climate-col">
-      <form>
-        <input type="text" placeholder="Location" required id='namefield'>
-      </form>
-    </div>
-    <div>
-      <button onclick="getLocation()">Using location of device</button>
-      <div id="output"></div>
-    </div>
-  </section> -->
-  
   <div class="box">
     <h2>Weather Information</h2>
     <div class="options">
@@ -60,8 +46,8 @@
         <div id="manualOutput"></div>
     </div>
   </div>
-
-  <section class="footer">
+  
+  <div class="footer">
     <h3>About Us</h3>
     <p>Wildlife Care is made with the vision to spread awarness about endangered wildlife species as well as problems caused due to climate change.</p>
     <div class="icons">
@@ -72,8 +58,18 @@
       <i class="fa fa-github"></i>
     </div>
     <p>Made with <i class="fa fa-heart-o"></i> by Sanchita Bora</p>
+  </div>
   </section>
-
+  
+  <script>
+    var navLink = document.getElementById('navLink');
+    function showMenu(){
+      navLink.style.right="0";
+    }
+    function hideMenu(){
+      navLink.style.right="-200px";
+    }
+  </script>
   <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
   <script type="text/javascript" src="climate.js"></script>
 </body>

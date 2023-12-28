@@ -20,7 +20,7 @@
           <ul>
            <li><a href="index.html">HOME</a></li>
            <li><a href="about.html">ABOUT</a></li>
-           <li><a href="climate.html">CLIMATE IN YOUR AREA</a></li>
+           <li><a href="climate.html">KNOW YOUR PLACE</a></li>
            <li><a href="contact.html">CONTACT US</a></li>
           </ul>
       </div>
@@ -44,8 +44,37 @@
         <img src="images/forest3.jpg">
       </div>
     </div>
-  </section>
 
+    <div class="carousel-container">
+      <button class="carousel-control prev"> &lt; </button>
+      <div class="carousel-slide active">
+        <div class="slide-content">
+          <h2>Greta Thunberg</h2>
+          <h5> Environmental activist</h5> 
+          <p>" We aren’t  destroying the biosphere because we are selfish. We are doing it simply because we are unaware. "</p>
+        </div>
+        <img src="images/greta.webp" alt="Image 1"  class="c-img">
+      </div>
+      <div class="carousel-slide">
+        <div class="slide-content">
+          <h2>Leonardo Dicaprio</h2>
+          <h5> American Actor, Film Producer, Environmental Activist</h5>  
+          <p>" Climate change is real. It is happening right now, it is the most urgent threat facing our entire species and we need to work collectively together and stop procrastinating. "</p>
+        </div>
+        <img src="images/dicaprio.webp" alt="Image 2" class="c-img">
+      </div>
+      <div class="carousel-slide">
+        <div class="slide-content">
+          <h2>Jadav Payeng</h2>
+          <h5>Forest Man of India</h5>
+          <p>" Only by growing plants the earth will survive. "</p>
+        </div>
+        <img src="images/Jadav-Payeng.jpg" alt="Image 3"  class="c-img">
+      </div>
+      <button class="carousel-control next"> &gt; </button>
+    </div>
+  </section>
+  
   <section class="footer">
     <h3>About Us</h3>
     <p>Wildlife Care is made with the vision to spread awarness about endangered wildlife species as well as problems caused due to climate change.</p>
@@ -67,6 +96,35 @@
       function hideMenu(){
         navLink.style.right="-200px";
       }
+      const slides = document.querySelectorAll('.carousel-slide');
+      let currentSlide = 0;
+      let autoSlideInterval; // Variable to store the interval for automatic slide change
+
+      function showSlide(index) {
+        slides[currentSlide].classList.remove('active');
+        slides[index].classList.add('active');
+        currentSlide = index;
+      }
+
+      document.querySelector('.carousel-control.prev').addEventListener('click', () => {
+        const prevSlide = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(prevSlide);
+        clearInterval(autoSlideInterval); // Reset the automatic slide change timer
+      });
+
+      document.querySelector('.carousel-control.next').addEventListener('click', () => {
+        const nextSlide = (currentSlide + 1) % slides.length;
+        showSlide(nextSlide);
+        clearInterval(autoSlideInterval); // Reset the automatic slide change timer
+      });
+
+      function autoChangeSlide() {
+        const nextSlide = (currentSlide + 1) % slides.length;
+        showSlide(nextSlide);
+      }
+
+      // Start automatic slide change timer
+      autoSlideInterval = setInterval(autoChangeSlide, 5000);
   </script>
 
 </body>

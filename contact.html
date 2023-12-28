@@ -59,11 +59,11 @@
        </div>
      </div>
      <div class="contact-col">
-      <form>
-        <input type="text" placeholder="Enter your name" required id='namefield'>
-        <input type="email" placeholder="Enter your email-id" required id='emailfield'> 
-        <input type="text" placeholder="Enter your phone number" required id='phone'>
-        <textarea placeholder="Message" rows="8" required id='msg'></textarea>
+      <form action="process_form.php" method="POST">
+        <input type="text" placeholder="Enter your name" name='namefield'>
+        <input type="email" placeholder="Enter your email-id" name='emailfield'> 
+        <input type="text" placeholder="Enter your phone number" name='phone'>
+        <textarea placeholder="Message" rows="8" name='msg'></textarea>
         <button type="submit" class="btn red">Send Message</button>
       </form>
      </div>
